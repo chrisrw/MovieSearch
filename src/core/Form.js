@@ -13,7 +13,7 @@ const Form = () => {
   // GET Movies based on input value.
   const fetchMovies = () => {
     return axios
-      .get(`http://www.omdbapi.com/?apikey=${KEY}&s=${searchTitle}`)
+      .get(`https://www.omdbapi.com/?apikey=${KEY}&s=${searchTitle}`)
       .then((res) => {
         console.log(res);
         setMovies(res.data.Search);
