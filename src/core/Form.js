@@ -5,9 +5,6 @@ const Form = () => {
   const [movies, setMovies] = useState([]);
   const [searchTitle, setSearchTitle] = useState('');
   const [titleFromClick, setTitleFromClick] = useState('');
-  const [movieFilter, setMovieFilter] = useState(true);
-  const [message, setMessage] = useState('');
-  const [hideMovie, setHideMovie] = useState(false);
   const KEY = process.env.REACT_APP_APIKEY;
 
   // GET Movies based on input value.
@@ -15,7 +12,6 @@ const Form = () => {
     return axios
       .get(`https://www.omdbapi.com/?apikey=${KEY}&s=${searchTitle}`)
       .then((res) => {
-        console.log(res);
         setMovies(res.data.Search);
       })
       .catch((err) => {
@@ -32,7 +28,6 @@ const Form = () => {
   const filterMovie = (id) => {
     const newMovies = [...movies]
     newMovies.splice(id, 1)
-    console.log(newMovies, movies, id)
     setMovies(newMovies)
   };
 
@@ -70,5 +65,5 @@ const Form = () => {
     </div>
   );
 };
-// (e) => console.log(movie)
+
 export default Form;
