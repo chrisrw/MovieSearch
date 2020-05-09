@@ -7,6 +7,8 @@ User can search for a specific movie using the OMDB API.
 
 State is stored after each character is typed into the search bar. When the user clicks "Fetch Post," the application searches for matching titles found in the OMDB API. 
 
+Deployed application: https://moviesearchcw.herokuapp.com/
+
 ### Technologies Used
 
 React and Bootstrap
